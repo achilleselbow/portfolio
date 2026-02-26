@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alex Gendler | Ukrainian Neoclassical Heritage</title>
+    <meta
+      name="description"
+      content="A Ukrainian neoclassical heritage variant for Alex Gendler: stately typography, sacred gold accents, embroidery motifs, and a monumental editorial rhythm."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&amp;family=Cormorant+Garamond:wght@400;500;600&amp;family=Manrope:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --parchment: #ece6d8;
+        --marble: #f7f3ea;
+        --earth: #6d5d4a;
+        --ink: #1a1917;
+        --gold: #b89242;
+        --gold-dark: #8f6f2f;
+        --line: #2a2620;
+        --crimson: #7c2c24;
+        --max: 1160px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--parchment);
+        color: var(--ink);
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+
+      body {
+        font-family: Manrope, sans-serif;
+        line-height: 1.58;
+        background-image:
+          radial-gradient(circle at 16% 8%, rgba(255, 255, 255, 0.45), transparent 30%),
+          linear-gradient(135deg, rgba(109, 93, 74, 0.06), transparent 40%),
+          repeating-linear-gradient(
+            102deg,
+            rgba(255, 255, 255, 0.02) 0,
+            rgba(255, 255, 255, 0.02) 14px,
+            rgba(0, 0, 0, 0.012) 14px,
+            rgba(0, 0, 0, 0.012) 28px
+          );
+      }
+
+      .shell {
+        width: min(var(--max), calc(100vw - 2rem));
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 8;
+        background: rgba(236, 230, 216, 0.96);
+        border-bottom: 2px solid var(--line);
+        box-shadow: inset 0 -4px 0 rgba(184, 146, 66, 0.28);
+      }
+
+      .nav-wrap {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        font-family: Cinzel, serif;
+        font-size: clamp(1.45rem, 3vw, 2.3rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        font-size: 0.86rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      a { color: inherit; }
+
+      .menu a,
+      .tile a,
+      .prose a,
+      .contact a,
+      .service-cta {
+        text-decoration: none;
+      }
+
+      .menu a {
+        border-bottom: 1px solid transparent;
+      }
+
+      .menu a:hover,
+      .menu a:focus-visible {
+        border-color: currentColor;
+      }
+
+      .hero {
+        margin-top: 1rem;
+        border: 3px solid var(--line);
+        background: linear-gradient(180deg, var(--marble), #efe8d8);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .bulletin {
+        margin-top: 1rem;
+        border: 2px solid var(--line);
+        background: linear-gradient(180deg, #241f1a, #1a1713);
+        color: #eadfca;
+        overflow: hidden;
+      }
+
+      .bulletin-track {
+        display: inline-flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 0.48rem 0;
+        white-space: nowrap;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 0.73rem;
+        animation: bulletin-scroll 24s linear infinite;
+      }
+
+      .bulletin strong {
+        color: #d4b16a;
+      }
+
+      @keyframes bulletin-scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 14px;
+        pointer-events: none;
+        background-size: 52px 14px;
+        background-repeat: repeat-x;
+      }
+
+      .hero::before {
+        top: 0;
+        background-image:
+          linear-gradient(45deg, transparent 42%, var(--crimson) 42%, var(--crimson) 58%, transparent 58%),
+          linear-gradient(-45deg, transparent 42%, var(--gold-dark) 42%, var(--gold-dark) 58%, transparent 58%);
+      }
+
+      .hero::after {
+        bottom: 0;
+        background-image:
+          linear-gradient(45deg, transparent 42%, var(--gold-dark) 42%, var(--gold-dark) 58%, transparent 58%),
+          linear-gradient(-45deg, transparent 42%, var(--crimson) 42%, var(--crimson) 58%, transparent 58%);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+      }
+
+      .hero-left {
+        padding: clamp(1.8rem, 4vw, 3rem);
+        border-right: 1px solid var(--line);
+        background:
+          linear-gradient(90deg, rgba(184, 146, 66, 0.13), transparent 26%),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.02) 0,
+            rgba(255, 255, 255, 0.02) 22px,
+            rgba(0, 0, 0, 0.015) 22px,
+            rgba(0, 0, 0, 0.015) 44px
+          );
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--gold-dark);
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0.65rem 0 0;
+        font-family: Cinzel, serif;
+        text-transform: uppercase;
+        font-size: clamp(2.2rem, 6.3vw, 5.3rem);
+        line-height: 0.92;
+        letter-spacing: 0.05em;
+        text-shadow: 0 1px 0 #fff;
+      }
+
+      .manifesto {
+        margin-top: 1rem;
+        max-width: 56ch;
+        font-size: 1.01rem;
+      }
+
+      .service-cta {
+        display: inline-block;
+        margin-top: 0.95rem;
+        padding: 0.62rem 0.96rem;
+        border: 2px solid var(--line);
+        background: linear-gradient(180deg, #c5a15b, var(--gold));
+        color: #19150f;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        font-size: 0.76rem;
+        transition: transform 150ms ease, box-shadow 150ms ease;
+      }
+
+      .service-cta:hover,
+      .service-cta:focus-visible {
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0 0 var(--line);
+      }
+
+      .chips {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .chip {
+        border: 1px solid var(--line);
+        padding: 0.24rem 0.42rem;
+        font-size: 0.71rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.55);
+      }
+
+      .hero-right {
+        background:
+          linear-gradient(90deg, rgba(124, 44, 36, 0.9) 0 16px, transparent 16px),
+          linear-gradient(180deg, #d6c8a9, #c8b58d);
+        border-left: 1px solid rgba(42, 38, 32, 0.2);
+        padding: 0.9rem;
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0.7rem;
+      }
+
+      .portrait {
+        border: 2px solid var(--line);
+        background: #f1eadb;
+        overflow: hidden;
+        aspect-ratio: 4 / 5;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .portrait:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.16);
+      }
+
+      .portrait img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        filter: contrast(1.05) saturate(0.88);
+      }
+
+      .symbols {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.45rem;
+      }
+
+      .symbol-badge {
+        border: 2px solid var(--line);
+        background: rgba(255, 255, 255, 0.55);
+        min-height: 58px;
+        display: grid;
+        place-items: center;
+      }
+
+      .symbol-badge svg {
+        width: 28px;
+        height: 28px;
+        display: block;
+      }
+
+      .crest {
+        border: 2px solid var(--line);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(185, 146, 66, 0.18));
+        padding: 0.6rem;
+        text-align: center;
+        font-family: Cormorant Garamond, serif;
+      }
+
+      .crest .mark {
+        font-size: 1.8rem;
+        color: var(--gold-dark);
+      }
+
+      .crest p {
+        margin: 0.2rem 0 0;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      section[id] { scroll-margin-top: 90px; }
+
+      .section {
+        margin-top: 1.25rem;
+        border: 2px solid var(--line);
+        background: var(--marble);
+      }
+
+      .head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.8rem;
+        align-items: end;
+        padding: 0.78rem 0.9rem;
+        border-bottom: 1px solid var(--line);
+        background: rgba(185, 146, 66, 0.16);
+      }
+
+      .head h2 {
+        margin: 0;
+        font-family: Cinzel, serif;
+        font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .head p {
+        margin: 0;
+        font-size: 0.73rem;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--earth);
+      }
+
+      .prose {
+        padding: 0.9rem;
+        max-width: 78ch;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tile {
+        padding: 0.9rem;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        position: relative;
+        transition: background-color 100ms linear;
+      }
+
+      .tile:nth-child(2n) { border-right: 0; }
+
+      .tile:hover,
+      .tile:focus-within {
+        background: rgba(185, 146, 66, 0.12);
+      }
+
+      .tile h3 {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+
+      .tile p {
+        margin: 0.45rem 0 0;
+        color: var(--earth);
+      }
+
+      .teaser {
+        min-height: 3.7em;
+        opacity: 0;
+        margin: 0.45rem 0 0;
+        color: var(--earth);
+        font-size: 0.84rem;
+        line-height: 1.42;
+        transition: opacity 100ms linear;
+        will-change: opacity;
+      }
+
+      .tile:hover .teaser,
+      .tile:focus-within .teaser {
+        opacity: 1;
+      }
+
+      .contact {
+        padding: 0.9rem;
+      }
+
+      .email {
+        display: inline-block;
+        margin-top: 0.45rem;
+        font-family: Cinzel, serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.03em;
+      }
+
+      footer {
+        margin: 1.2rem 0 1.8rem;
+        border-top: 2px solid var(--line);
+        padding-top: 0.7rem;
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-left {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+      }
+
+      @media (max-width: 760px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tile {
+          border-right: 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html,
+        body { scroll-padding-top: 112px; }
+
+        section[id] { scroll-margin-top: 112px; }
+
+        .shell {
+          width: min(var(--max), calc(100vw - 1.2rem));
+        }
+
+        .nav-wrap {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 0.45rem 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="shell nav-wrap">
+        <div class="brand">Alex Gendler</div>
+        <nav class="menu" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#writing">Writing</a>
+          <a href="#multimedia">Multimedia</a>
+          <a href="#education">Education</a>
+          <a href="#panels">Panels</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <div class="bulletin" aria-label="State bulletin satirical ticker">
+        <div class="bulletin-track">
+          <span><strong>State Bulletin</strong> continuity is policy</span>
+          <span><strong>State Bulletin</strong> family, field, and memory</span>
+          <span><strong>State Bulletin</strong> archive before novelty</span>
+          <span><strong>State Bulletin</strong> continuity is policy</span>
+          <span><strong>State Bulletin</strong> family, field, and memory</span>
+          <span><strong>State Bulletin</strong> archive before novelty</span>
+        </div>
+      </div>
+
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <p class="eyebrow">Ceremonial Edition | Writer, Editor, Translator, Educator</p>
+            <h1>Continuity, order, inheritance.</h1>
+            <p class="manifesto">
+              Alex develops rigorous public writing across history, politics, and culture, with attention to continuity,
+              civic inheritance, and long-form clarity in an intentionally grand, theatrical register.
+            </p>
+            <a class="service-cta" href="mailto:alex@alexgendler.com?subject=Service%20Inquiry%20for%20Alex%20Gendler">
+              Inquire About Services Via Email
+            </a>
+            <div class="chips" aria-label="Specialties">
+              <span class="chip">Philosophy</span>
+              <span class="chip">History</span>
+              <span class="chip">Culture &amp; Politics</span>
+              <span class="chip">Script Development</span>
+              <span class="chip">Translation</span>
+            </div>
+          </div>
+          <aside class="hero-right" aria-label="Portrait and emblem">
+            <figure class="portrait">
+              <img
+                src="saintified-portrait.jpg"
+                alt="Saintified portrait of Alex Gendler"
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+            <div class="symbols" aria-label="Decorative symbols">
+              <div class="symbol-badge" title="Orthodox cross">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <g fill="none" stroke="#8f6f2f" stroke-width="5" stroke-linecap="round">
+                    <path d="M32 9v46" />
+                    <path d="M16 22h32" />
+                    <path d="M20 32h24" />
+                    <path d="M18 45h28" />
+                  </g>
+                </svg>
+              </div>
+              <div class="symbol-badge" title="Tryzub">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <path d="M32 8c-4 8-10 12-16 14 8 2 10 10 10 16 0 5-2 10-6 14 6-1 10-5 12-10 2 5 6 9 12 10-4-4-6-9-6-14 0-6 2-14 10-16-6-2-12-6-16-14z" fill="#8f6f2f"/>
+                  <path d="M32 12v34" stroke="#f2e1b4" stroke-width="3" />
+                </svg>
+              </div>
+            </div>
+            <div class="crest">
+              <div class="mark">✢</div>
+              <p>Order. Memory. Continuance.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="head">
+          <h2>About</h2>
+          <p>Working across media</p>
+        </div>
+        <div class="prose">
+          <p>
+            Alex has nearly two decades of experience adapting complex information into compelling formats for broad
+            audiences. At <a href="https://uptime.app" target="_blank" rel="noreferrer noopener">Uptime</a>, he led a
+            team producing interactive summaries of books and documentaries. At
+            <a href="https://ed.ted.com" target="_blank" rel="noreferrer noopener">TED-Ed</a>, he researched, scripted,
+            and edited hundreds of lessons spanning philosophy, history, and science.
+          </p>
+          <p>
+            His work has appeared in
+            <a href="https://americanaffairsjournal.org" target="_blank" rel="noreferrer noopener">American Affairs</a>,
+            <a href="https://thepointmag.com" target="_blank" rel="noreferrer noopener">The Point</a>, and
+            <a href="https://www.voanews.com" target="_blank" rel="noreferrer noopener">Voice of America</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="writing" class="section">
+        <div class="head">
+          <h2>Selected Writing</h2>
+          <p>Essays and criticism</p>
+        </div>
+        <div class="grid"></div>
+      </section>
+
+      <section id="multimedia" class="section">
+        <div class="head">
+          <h2>Multimedia</h2>
+          <p>Audio + documentary production</p>
+        </div>
+        <div class="grid"></div>
+      </section>
+
+      <section id="education" class="section">
+        <div class="head">
+          <h2>Educational Work</h2>
+          <p>Explainers for global audiences</p>
+        </div>
+        <div class="grid"></div>
+      </section>
+
+      <section id="panels" class="section">
+        <div class="head">
+          <h2>Interviews &amp; Panels</h2>
+          <p>Public conversation</p>
+        </div>
+        <div class="grid"></div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="head">
+          <h2>Contact</h2>
+          <p>Commissions and collaborations</p>
+        </div>
+        <div class="contact">
+          <p>Alex is available for writing, editing, scripting, and translation projects.</p>
+          <a class="email" href="mailto:alex@alexgendler.com">alex@alexgendler.com</a>
+          <p>
+            Professional profile:
+            <a href="https://www.linkedin.com/in/alex-gendler-98b997a8/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <div>© 2026 Alex Gendler</div>
+      </footer>
+    </main>
+
+    <script>
+      const groups = {
+        writing: [
+          ["Assembling the Debris: Russia 1985-1999", "https://magazine.metroeconomica.org/assembling-the-debris-russia-1985-1999/", "Metro Magazine, 2023", "A close reading of TraumaZone that treats Soviet collapse as lived experience rather than abstraction."],
+          ["The New Superfluous Men", "https://americanaffairsjournal.org", "American Affairs, 2020", "An analysis of male alienation in relation to work, status, and social structure."],
+          ["The Bizarre World of Aztec Nazi Black Metal", "https://www.thebattleground.eu/2024/03/15/aryan-aztlan-the-bizarre-world-of-aztec-nazi-black-metal/", "The Battleground, 2023", "A study of ideological fusion and aesthetic contradiction inside an extremist music fringe."],
+          ["Homo Algorithmicus: Rationalism and its discontents", "https://thepointmag.com/politics/homo-algorithmicus/", "The Point, 2025", "A critique of computational political thinking when it meets social complexity."],
+        ],
+        multimedia: [
+          ["Resistance Podcast: Escape from Kherson", "https://brazen.fm", "Brazen Presents, 2022", "A narrative account of civilian flight under occupation and wartime uncertainty."],
+          ["Afghanistan Full Circle", "https://www.voanews.com", "Voice of America, 2022", "A long-view explainer on recurring cycles of intervention and state fragility."],
+          ["Two Years of War in Ukraine", "https://visualjournali.st", "Voice of America, 2024", "An interactive timeline and map-based synthesis of war developments."],
+          ["Wagner Group Leaves Trail of Destruction", "https://www.voanews.com", "Voice of America, 2023", "A compact portrait of Wagner's methods across conflict zones."],
+        ],
+        education: [
+          ["Demolition, Disease, and Death: Building the Panama Canal", "https://www.youtube.com", "TED-Ed, 2021", "Engineering ambition meets ecology, disease, labor, and imperial logistics."],
+          ["A Brief History of Chess", "https://www.openculture.com", "TED-Ed, 2019", "A civilizational history of chess as strategy, ritual, and cultural exchange."],
+          ["How to Recognize a Dystopia", "https://www.youtube.com", "TED-Ed, 2016", "A framework for reading dystopia as political form, not mere genre mood."],
+          ["The Wars that Inspired Game of Thrones", "https://www.theguardian.com", "TED-Ed, 2015", "A bridge between medieval succession conflicts and modern popular mythology."],
+        ],
+        panels: [
+          ["The Boys Are Not Alright", "https://parallaxviews.podbean.com", "Parallax Views, 2025", "A conversation on masculinity, class decline, and social dislocation."],
+          ["Making Sense of the War in Ukraine", "https://www.youtube.com", "Convergence Magazine, 2022", "A contextual panel on war analysis, solidarity, and political framing."],
+          ["Aryan Aztlán", "https://www.brandeis.edu", "Brandeis University, 2022", "A talk on nationalism, mythic identity, and subcultural symbolism."],
+          ["Anti-Modernity and the Conspiracy of History", "https://grimposium.ca", "ISMMS, 2023", "A reading of anti-modern narratives and their conspiratorial historical logic."],
+        ]
+      };
+
+      for (const [id, items] of Object.entries(groups)) {
+        const grid = document.querySelector(`#${id} .grid`);
+        if (!grid) continue;
+        items.forEach(([title, href, meta, teaser]) => {
+          const article = document.createElement("article");
+          article.className = "tile";
+          article.innerHTML = `
+            <h3><a href="${href}" target="_blank" rel="noreferrer noopener">${title}</a></h3>
+            <p>${meta}</p>
+            <p class="teaser">${teaser}</p>
+          `;
+          grid.appendChild(article);
+        });
+      }
+    </script>
+  </body>
+</html>

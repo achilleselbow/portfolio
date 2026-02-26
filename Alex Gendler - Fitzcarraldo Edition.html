@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alex Gendler | Fitzcarraldo Study</title>
+    <meta
+      name="description"
+      content="A Fitzcarraldo-inspired alternate design for Alex Gendler: writer, editor, translator, and educator."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=IBM+Plex+Sans:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f8f7f4;
+        --ink: #131313;
+        --blue: #1d47b2;
+        --rule: #181818;
+        --muted: #4a4a4a;
+        --max: 1060px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        scroll-behavior: smooth;
+        scroll-padding-top: 82px;
+      }
+
+      body {
+        font-family: "IBM Plex Sans", sans-serif;
+        line-height: 1.6;
+      }
+
+      .page {
+        width: min(var(--max), calc(100vw - 2.4rem));
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: rgba(248, 247, 244, 0.97);
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .nav-wrap {
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        font-family: "Libre Baskerville", serif;
+        font-size: clamp(1.35rem, 2.8vw, 1.95rem);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        font-size: 0.93rem;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .menu a,
+      .entry a,
+      .contact a,
+      .about a {
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+
+      .menu a:hover,
+      .entry a:hover,
+      .contact a:hover,
+      .about a:hover {
+        border-color: currentColor;
+      }
+
+      .masthead {
+        margin-top: 1.55rem;
+        border: 2px solid var(--rule);
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        min-height: 520px;
+        background: #fff;
+      }
+
+      .mast-left {
+        padding: clamp(1.3rem, 3.8vw, 2.5rem);
+        border-right: 1px solid var(--rule);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .folio {
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .title {
+        margin: 0.8rem 0 0;
+        font-family: "Libre Baskerville", serif;
+        font-size: clamp(2rem, 4.9vw, 4.4rem);
+        line-height: 0.98;
+        font-weight: 400;
+        max-width: 11ch;
+      }
+
+      .subtitle {
+        margin-top: 1rem;
+        max-width: 42ch;
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+
+      .service-cta {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.58rem 0.88rem;
+        border: 2px solid var(--rule);
+        background: #fff;
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        text-decoration: none;
+        transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+      }
+
+      .service-cta:hover,
+      .service-cta:focus-visible {
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0 0 var(--rule);
+        background: #f2f2ef;
+      }
+
+      .chips {
+        margin-top: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.4rem;
+      }
+
+      .chip {
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 0.32rem 0.45rem;
+      }
+
+      .mast-right {
+        background: var(--blue);
+        color: #fff;
+        padding: clamp(1.2rem, 3vw, 2rem);
+        display: grid;
+        grid-template-rows: 1fr auto;
+      }
+
+      .portrait {
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        align-self: start;
+        width: min(100%, 420px);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .portrait:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 18px rgba(9, 9, 9, 0.25);
+      }
+
+      .portrait img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: grayscale(1) contrast(1.08) brightness(1.08);
+      }
+
+      .mast-note {
+        border-top: 1px solid rgba(255, 255, 255, 0.72);
+        padding-top: 0.8rem;
+      }
+
+      .mast-note p {
+        margin: 0;
+        max-width: 31ch;
+        font-size: 0.95rem;
+      }
+
+      section[id] {
+        scroll-margin-top: 82px;
+      }
+
+      section {
+        margin-top: 2rem;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 0.8rem;
+        border-top: 2px solid var(--rule);
+        padding-top: 0.75rem;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-family: "Libre Baskerville", serif;
+        font-size: clamp(1.35rem, 2.6vw, 2rem);
+        font-weight: 400;
+      }
+
+      .section-head span {
+        font-size: 0.73rem;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .about {
+        margin-top: 0.9rem;
+        max-width: 74ch;
+        font-size: 1.03rem;
+      }
+
+      .list {
+        margin-top: 0.85rem;
+        border-top: 1px solid var(--rule);
+        overflow-x: hidden;
+      }
+
+      .entry {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1rem;
+        padding: 0.78rem 0;
+        border-bottom: 1px solid var(--rule);
+        align-items: baseline;
+        transition: background-color 140ms ease;
+      }
+
+      .entry:hover,
+      .entry:focus-within {
+        background: rgba(29, 71, 178, 0.07);
+      }
+
+      .entry h3 {
+        margin: 0;
+        font-size: 1.03rem;
+        font-weight: 500;
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .entry > p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+        text-align: right;
+        white-space: nowrap;
+        min-width: 0;
+        justify-self: end;
+      }
+
+      .teaser-toggle {
+        grid-column: 1 / -1;
+      }
+
+      .teaser-toggle summary {
+        list-style: none;
+        cursor: pointer;
+        width: fit-content;
+        font-size: 0.71rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 0.2rem 0.35rem;
+      }
+
+      .teaser-toggle summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .teaser-toggle p {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+        text-align: left;
+        white-space: normal;
+        max-width: none;
+        transition: max-height 240ms ease, opacity 220ms ease, margin-top 220ms ease;
+      }
+
+      .entry:hover .teaser-toggle p,
+      .entry:focus-within .teaser-toggle p,
+      .teaser-toggle[open] p {
+        max-height: 160px;
+        opacity: 1;
+        margin-top: 0.4rem;
+      }
+
+      .contact {
+        margin-top: 0.9rem;
+        border: 2px solid var(--rule);
+        background: #fff;
+        padding: 1rem;
+      }
+
+      .contact p {
+        margin: 0;
+      }
+
+      .email {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-family: "Libre Baskerville", serif;
+        font-size: 1.45rem;
+      }
+
+      footer {
+        margin: 2.2rem 0 2rem;
+        font-size: 0.84rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 980px) {
+        .masthead {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .mast-left {
+          border-right: 0;
+          border-bottom: 1px solid var(--rule);
+        }
+
+        .chips {
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .entry {
+          grid-template-columns: 1fr;
+          gap: 0.25rem;
+        }
+
+        .entry p {
+          text-align: left;
+          white-space: normal;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html,
+        body {
+          scroll-padding-top: 112px;
+        }
+
+        section[id] {
+          scroll-margin-top: 112px;
+        }
+
+        .page {
+          width: min(var(--max), calc(100vw - 1.2rem));
+        }
+
+        .nav-wrap {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 0.45rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="page nav-wrap">
+        <div class="brand">Alex Gendler</div>
+        <nav class="menu" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#writing">Writing</a>
+          <a href="#multimedia">Multimedia</a>
+          <a href="#education">Education</a>
+          <a href="#panels">Panels</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="masthead" aria-label="Intro panel">
+        <div class="mast-left">
+          <p class="folio">Writer, Editor, Translator, Educator</p>
+          <h1 class="title">Ideas, clarified for public life.</h1>
+          <p class="subtitle">
+            Alex writes with intellectual precision across essays, scripted video, and audio documentaries.
+          </p>
+          <a class="service-cta" href="mailto:alex@alexgendler.com?subject=Service%20Inquiry%20for%20Alex%20Gendler">
+            Inquire About Services Via Email
+          </a>
+          <div class="chips">
+            <span class="chip">Philosophy</span>
+            <span class="chip">History</span>
+            <span class="chip">Culture &amp; Politics</span>
+            <span class="chip">Script Development</span>
+            <span class="chip">Translation</span>
+          </div>
+        </div>
+        <aside class="mast-right" aria-label="Portrait and note">
+          <figure class="portrait">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/6173be39258ec8031d3ab5a7/19714c75-82fa-416a-a440-75e849b2e8b3/headshot.jpg?format=1500w"
+              alt="Alex Gendler portrait"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+          <div class="mast-note">
+            <p>For editorial teams that need deep research, sharp structure, and clean argument.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="section-head">
+          <h2>About</h2>
+          <span>Working across media</span>
+        </div>
+        <div class="about">
+          <p>
+            Alex has nearly two decades of experience adapting complex information into compelling formats for broad
+            audiences. At <a href="https://uptime.app" target="_blank" rel="noreferrer noopener">Uptime</a>, he led a
+            team producing interactive summaries of books and documentaries. At
+            <a href="https://ed.ted.com" target="_blank" rel="noreferrer noopener">TED-Ed</a>, he researched, scripted,
+            and edited hundreds of lessons spanning philosophy, history, and science.
+          </p>
+          <p>
+            His work has appeared in
+            <a href="https://americanaffairsjournal.org" target="_blank" rel="noreferrer noopener">American Affairs</a>,
+            <a href="https://thepointmag.com" target="_blank" rel="noreferrer noopener">The Point</a>, and
+            <a href="https://www.voanews.com" target="_blank" rel="noreferrer noopener">Voice of America</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="writing">
+        <div class="section-head">
+          <h2>Selected Writing</h2>
+          <span>Essays and criticism</span>
+        </div>
+        <div class="list">
+          <article class="entry">
+            <h3><a href="https://magazine.metroeconomica.org/assembling-the-debris-russia-1985-1999/" target="_blank" rel="noreferrer noopener">Assembling the Debris: Russia 1985-1999</a></h3>
+            <p>Metro Magazine, 2023</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://americanaffairsjournal.org" target="_blank" rel="noreferrer noopener">The New Superfluous Men</a></h3>
+            <p>American Affairs, 2020</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://www.thebattleground.eu/2024/03/15/aryan-aztlan-the-bizarre-world-of-aztec-nazi-black-metal/" target="_blank" rel="noreferrer noopener">The Bizarre World of Aztec Nazi Black Metal</a></h3>
+            <p>The Battleground, 2023</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://thepointmag.com/politics/homo-algorithmicus/" target="_blank" rel="noreferrer noopener">Homo Algorithmicus: Rationalism and its discontents</a></h3>
+            <p>The Point, 2025</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="multimedia">
+        <div class="section-head">
+          <h2>Multimedia</h2>
+          <span>Audio + documentary production</span>
+        </div>
+        <div class="list">
+          <article class="entry">
+            <h3><a href="https://brazen.fm" target="_blank" rel="noreferrer noopener">Resistance Podcast: Escape from Kherson</a></h3>
+            <p>Brazen Presents, 2022</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://www.voanews.com" target="_blank" rel="noreferrer noopener">Afghanistan Full Circle</a></h3>
+            <p>Voice of America, 2022</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://visualjournali.st" target="_blank" rel="noreferrer noopener">Two Years of War in Ukraine</a></h3>
+            <p>Voice of America, 2024</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://www.voanews.com" target="_blank" rel="noreferrer noopener">Wagner Group Leaves Trail of Destruction</a></h3>
+            <p>Voice of America, 2023</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="section-head">
+          <h2>Educational Work</h2>
+          <span>Explainers for global audiences</span>
+        </div>
+        <div class="list">
+          <article class="entry">
+            <h3><a href="https://www.youtube.com" target="_blank" rel="noreferrer noopener">Demolition, Disease, and Death: Building the Panama Canal</a></h3>
+            <p>TED-Ed, 2021</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://www.openculture.com" target="_blank" rel="noreferrer noopener">A Brief History of Chess</a></h3>
+            <p>TED-Ed, 2019</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://www.youtube.com" target="_blank" rel="noreferrer noopener">How to Recognize a Dystopia</a></h3>
+            <p>TED-Ed, 2016</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://www.theguardian.com" target="_blank" rel="noreferrer noopener">The Wars that Inspired Game of Thrones</a></h3>
+            <p>TED-Ed, 2015</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="panels">
+        <div class="section-head">
+          <h2>Interviews &amp; Panels</h2>
+          <span>Public conversation</span>
+        </div>
+        <div class="list">
+          <article class="entry">
+            <h3><a href="https://parallaxviews.podbean.com" target="_blank" rel="noreferrer noopener">The Boys Are Not Alright</a></h3>
+            <p>Parallax Views, 2025</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://www.youtube.com" target="_blank" rel="noreferrer noopener">Making Sense of the War in Ukraine</a></h3>
+            <p>Convergence Magazine, 2022</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://www.brandeis.edu" target="_blank" rel="noreferrer noopener">Aryan Aztlán</a></h3>
+            <p>Brandeis University, 2022</p>
+          </article>
+          <article class="entry">
+            <h3><a href="https://grimposium.ca" target="_blank" rel="noreferrer noopener">Anti-Modernity and the Conspiracy of History</a></h3>
+            <p>ISMMS, 2023</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <span>Commissions and collaborations</span>
+        </div>
+        <div class="contact">
+          <p>Alex is available for writing, editing, scripting, and translation projects.</p>
+          <a class="email" href="mailto:alex@alexgendler.com">alex@alexgendler.com</a>
+          <p>
+            Professional profile:
+            <a href="https://www.linkedin.com/in/alex-gendler-98b997a8/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <div>© 2026 Alex Gendler</div>
+      </footer>
+    </main>
+    <script>
+      const teasers = {
+        "Assembling the Debris: Russia 1985-1999":
+          "A close reading of Adam Curtis' TraumaZone that uses on-the-ground archival footage to show the Soviet collapse as lived catastrophe. It argues the series is powerful but can also drift toward a fatalist Russian self-myth.",
+        "The New Superfluous Men":
+          "This essay frames incel culture as a symptom of deeper economic and social dislocation rather than a fringe internet anomaly. It links male alienation to labor precarity, status loss, and failures of political imagination.",
+        "The Bizarre World of Aztec Nazi Black Metal":
+          "An investigation into the unsettling overlap between indigenous iconography and neo-Nazi black metal in Latin America. The piece tracks the history and explains why the contradiction is ideological, not just aesthetic.",
+        "Homo Algorithmicus: Rationalism and its discontents":
+          "A critique of hyper-rational internet politics and the fantasy that social life can be solved like an optimization problem. It examines how technically fluent worldviews still collapse when confronted with violence, desire, and moral conflict.",
+        "Resistance Podcast: Escape from Kherson":
+          "A story of flight from Russian occupation centered on the logistics and fear of getting out alive. The episode foregrounds civilian agency, translation, and survival under wartime pressure.",
+        "Afghanistan Full Circle":
+          "A century-scale explainer on Afghanistan's recurring loop of reform, reaction, and foreign intervention. It shows how unfinished state-building and geopolitical pressure keep reproducing crisis.",
+        "Two Years of War in Ukraine":
+          "An interactive account of the first two years of full-scale war, anchored in mapping and timeline structure. It connects the 2022 invasion to the earlier conflict phase that began in 2014.",
+        "Wagner Group Leaves Trail of Destruction":
+          "A compact portrait of Wagner's operating model across theaters, from coercion and extraction to deniable violence. It situates the group as both military instrument and political liability.",
+        "Demolition, Disease, and Death: Building the Panama Canal":
+          "A historical narrative of how engineering ambition collided with disease, terrain, and labor exploitation. It contrasts the failed French attempt with the later US lock-canal breakthrough.",
+        "A Brief History of Chess":
+          "A fast-moving history of chess from early Indian origins to global variants and modern standardization. It treats the game as both a strategic system and a cultural mirror.",
+        "How to Recognize a Dystopia":
+          "A guide to reading dystopian fiction as political warning rather than pure pessimism. It argues these stories are less about gadgets or tyrants than about forced social perfection.",
+        "The Wars that Inspired Game of Thrones":
+          "An accessible bridge between fantasy drama and the dynastic violence of the Wars of the Roses. It highlights succession crises, factional shifts, and propaganda as historical engines.",
+        "The Boys Are Not Alright":
+          "A conversation on working-class male alienation, from loneliness and status anxiety to economic decline. It maps the overlap between gender grievance, class erosion, and political volatility.",
+        "Making Sense of the War in Ukraine":
+          "A panel discussion that foregrounds historical context, anti-militarist solidarity, and geopolitical realism. It challenges simplified narratives while still centering Ukrainian agency.",
+        "Aryan Aztlán":
+          "A conference talk examining how pagan revival, nationalism, and conspiracy thinking fuse in a fringe metal subculture. It reads the scene as a case study in ideological bricolage.",
+        "Anti-Modernity and the Conspiracy of History":
+          "An analysis of how anti-modern subcultures convert historical grievance into total conspiracy narratives. It tracks the emotional appeal of mythic pasts in moments of social fragmentation."
+      };
+
+      document.querySelectorAll(".entry").forEach((entry) => {
+        const title = entry.querySelector("h3 a")?.textContent.trim();
+        const teaser = teasers[title];
+        if (!teaser) return;
+        const details = document.createElement("details");
+        details.className = "teaser-toggle";
+        details.innerHTML = "<summary>Preview</summary>";
+        const p = document.createElement("p");
+        p.textContent = teaser;
+        details.appendChild(p);
+        entry.appendChild(details);
+      });
+    </script>
+  </body>
+</html>
