@@ -1,0 +1,1049 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alex Gendler | Writer, Editor, Translator</title>
+    <meta
+      name="description"
+      content="Alex Gendler is a Brooklyn-based writer, editor, translator, and educator specializing in high-intelligence storytelling across print, video, and digital media."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Cinzel:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f3ede6;
+        --ink: #1a1a1a;
+        --muted: #3f3a33;
+        --signal: #c06a3d;
+        --cobalt: #554b44;
+        --line: #2b2520;
+        --card: rgba(243, 237, 230, 0.9);
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      html {
+        scroll-padding-top: 104px;
+      }
+
+      body {
+        font-family: "Archivo", sans-serif;
+        line-height: 1.55;
+        letter-spacing: 0.01em;
+        overflow-x: hidden;
+        background-image:
+          linear-gradient(180deg, rgba(26, 26, 26, 0.02), transparent 30%),
+          radial-gradient(circle at 50% 15%, rgba(0, 0, 0, 0.08), transparent 55%),
+          radial-gradient(circle at 50% 85%, rgba(0, 0, 0, 0.1), transparent 60%);
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      body::before {
+        width: 42vmax;
+        height: 6vmax;
+        background: var(--signal);
+        top: 22vh;
+        left: -8vmax;
+        transform: rotate(-12deg);
+        opacity: 0.12;
+      }
+
+      body::after {
+        width: 18vmax;
+        height: 18vmax;
+        border: 1.2vmax solid rgba(192, 106, 61, 0.2);
+        border-radius: 50%;
+        bottom: -6vmax;
+        right: -4vmax;
+        opacity: 0.25;
+      }
+
+      .grain {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+          radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.08) 0, transparent 35%),
+          radial-gradient(circle at 85% 70%, rgba(0, 0, 0, 0.1) 0, transparent 40%);
+        mix-blend-mode: multiply;
+      }
+
+      .site {
+        position: relative;
+        z-index: 1;
+      }
+
+      .site::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.2;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'%3E%3Cpath d='M180 880c40-180 50-330 24-480-16-90-8-160 30-260 36-96 110-160 240-200 160-50 360-20 460 70 100 90 130 210 122 360-8 150-50 280-110 430' fill='none' stroke='%23c06a3d' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M300 520c-110-30-180-90-260-190' fill='none' stroke='%23c06a3d' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M380 470c90-100 220-170 360-210' fill='none' stroke='%23c06a3d' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M560 430c160 10 280 80 400 190' fill='none' stroke='%23c06a3d' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M470 640c-60 120-170 200-320 280' fill='none' stroke='%23c06a3d' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M740 640c120 60 210 140 300 260' fill='none' stroke='%23c06a3d' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M650 360c-40-70-110-130-200-180' fill='none' stroke='%23c06a3d' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M820 360c120-30 220-20 330 20' fill='none' stroke='%23c06a3d' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M910 520c140 30 240 90 320 190' fill='none' stroke='%23c06a3d' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M260 700c-70 40-120 90-160 150' fill='none' stroke='%23c06a3d' stroke-width='5' stroke-linecap='round'/%3E%3Cg fill='%23c06a3d' opacity='0.55'%3E%3Cpath d='M1060 240c20-6 36-2 48 12-10 18-26 28-48 30-18-8-24-22-20-42z'/%3E%3Cpath d='M240 300c18-8 34-6 48 6-8 18-22 30-44 36-20-6-28-20-26-42z'/%3E%3Cpath d='M1180 520c20-8 36-4 52 10-10 20-28 30-52 34-18-6-26-20-24-44z'/%3E%3Cpath d='M520 220c18-6 32-4 44 8-8 16-22 26-42 30-16-6-22-18-18-38z'/%3E%3Cpath d='M880 720c22-6 38-2 50 14-10 18-26 28-48 32-18-8-24-22-20-46z'/%3E%3Cpath d='M360 620c18-6 32-4 46 10-8 16-22 26-44 30-16-6-22-18-18-40z'/%3E%3Cpath d='M1320 340c20-8 36-4 50 10-10 18-26 28-48 32-18-6-24-20-22-42z'/%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: -10% 20%;
+        background-size: 1800px auto;
+      }
+
+      .container {
+        width: min(var(--max), calc(100vw - 3rem));
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        backdrop-filter: blur(10px);
+        background: rgba(243, 237, 230, 0.9);
+        border-bottom: 1px solid rgba(26, 26, 26, 0.18);
+      }
+
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 66px;
+      }
+
+      .brand {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.45rem, 3vw, 2.1rem);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: flex-end;
+      }
+
+      .menu-toggle {
+        display: none;
+        align-items: center;
+        gap: 0.55rem;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: inherit;
+        padding: 0.45rem 0.7rem;
+        font-family: "Archivo", sans-serif;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+      }
+
+      .menu-toggle span {
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        position: relative;
+      }
+
+      .menu-toggle span::before,
+      .menu-toggle span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+      }
+
+      .menu-toggle span::before {
+        top: -6px;
+      }
+
+      .menu-toggle span::after {
+        top: 6px;
+      }
+
+      .menu-scrim {
+        position: fixed;
+        inset: 0;
+        background: rgba(12, 12, 12, 0.35);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 200ms ease;
+        z-index: 4;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .menu a,
+      .kicker a {
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 180ms ease;
+      }
+
+      .menu a:hover,
+      .kicker a:hover,
+      .card a:hover,
+      .email:hover {
+        border-color: currentColor;
+      }
+
+      .hero {
+        padding: clamp(2.4rem, 6vw, 4.2rem) 0 2.4rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 0.9rem;
+        grid-template-columns: 0.85fr 1.15fr;
+        align-items: center;
+      }
+
+      .hero-grid > div {
+        align-self: center;
+      }
+
+      .display {
+        margin: 0;
+        font-family: "Cinzel", serif;
+        font-size: clamp(2.2rem, 7.8vw, 6.5rem);
+        line-height: 0.99;
+        font-weight: 600;
+        max-width: 15ch;
+      }
+
+      .display .signal {
+        color: var(--signal);
+      }
+
+      .kicker {
+        margin: 0;
+        font-size: clamp(1.02rem, 1.8vw, 1.35rem);
+        color: var(--muted);
+      }
+
+      .manifesto {
+        margin-top: 1.2rem;
+        max-width: 64ch;
+        font-size: 1.07rem;
+      }
+
+      .service-cta {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.62rem 0.95rem;
+        border: 2px solid var(--line);
+        background: var(--signal);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+      }
+
+      .service-cta:hover,
+      .service-cta:focus-visible {
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0 0 var(--line);
+        background: #bd1f26;
+      }
+
+      .chip-row {
+        margin-top: 1.35rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.58rem;
+      }
+
+      .chip {
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border: 1px solid rgba(16, 18, 23, 0.45);
+        padding: 0.36rem 0.62rem;
+        background: rgba(245, 241, 232, 0.7);
+        transition: transform 160ms ease, background-color 160ms ease;
+      }
+
+      .chip:hover {
+        transform: translateY(-2px);
+        background: #fff;
+      }
+
+      section[id] {
+        scroll-margin-top: 104px;
+      }
+
+      .portrait {
+        justify-self: start;
+        width: min(100%, 360px);
+        aspect-ratio: 3 / 4;
+        border: 2px solid var(--line);
+        position: relative;
+        background: linear-gradient(140deg, rgba(245, 241, 232, 0.9), rgba(235, 230, 217, 0.78));
+        overflow: hidden;
+        transition: transform 220ms ease, box-shadow 220ms ease;
+      }
+
+      .portrait:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(16, 18, 23, 0.16);
+      }
+
+      .portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: saturate(0.95) contrast(1.03);
+      }
+
+      .portrait::before,
+      .portrait::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .portrait::before {
+        width: 58%;
+        height: 15%;
+        left: -8%;
+        top: 8%;
+        background: rgba(215, 38, 45, 0.42);
+        transform: rotate(-14deg);
+      }
+
+      .portrait::after {
+        display: none;
+      }
+
+      .portrait .caption {
+        position: absolute;
+        left: 0.65rem;
+        bottom: 0.5rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        background: rgba(245, 241, 232, 0.92);
+        padding: 0.2rem 0.35rem;
+      }
+
+      section {
+        padding: 2.2rem 0;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        border-top: 2px dashed rgba(43, 37, 32, 0.55);
+        padding-top: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      #about .section-head {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+        letter-spacing: 0.02em;
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+      }
+
+      .card {
+        border: 1px solid rgba(43, 37, 32, 0.28);
+        background: var(--card);
+        padding: 1rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 22px rgba(16, 18, 23, 0.12);
+        backdrop-filter: blur(6px);
+        transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+      }
+
+      .card.has-thumb {
+        position: relative;
+      }
+
+      .card.has-thumb .card-body {
+        padding-right: 10rem;
+      }
+
+      .card-thumb-wrap {
+        position: absolute;
+        top: 0.6rem;
+        right: 0.6rem;
+        width: 8.6rem;
+        aspect-ratio: 4 / 5;
+      }
+
+      .card.has-thumb .card-thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right center;
+        border-left: 1px solid rgba(43, 37, 32, 0.18);
+      }
+
+      .card.has-thumb .card-thumb.crop-top {
+        object-position: right 12%;
+      }
+
+      .card.has-thumb .card-thumb.softpower-left {
+        object-position: left center;
+      }
+
+
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: -30% -10% auto auto;
+        width: 120%;
+        height: 80%;
+        background:
+          radial-gradient(circle at 70% 30%, rgba(192, 106, 61, 0.16), transparent 55%),
+          radial-gradient(circle at 30% 65%, rgba(85, 75, 68, 0.14), transparent 60%);
+        opacity: 0.6;
+        pointer-events: none;
+      }
+
+      .card:hover,
+      .card:focus-within {
+        border-color: rgba(43, 37, 32, 0.55);
+        box-shadow: 0 12px 26px rgba(16, 18, 23, 0.18);
+        transform: translateY(-2px);
+      }
+
+      .card h3 {
+        margin: 0;
+        font-size: 1.08rem;
+        line-height: 1.24;
+      }
+
+      .card p {
+        margin: 0.55rem 0 0;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .card a {
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+
+      .card .teaser {
+        min-height: 4.5em;
+        opacity: 0;
+        margin: 0.55rem 0 0;
+        padding-top: 0.5rem;
+        font-size: 0.86rem;
+        line-height: 1.45;
+        color: var(--muted);
+        border-top: 1px dashed rgba(16, 18, 23, 0.22);
+        transition: opacity 180ms ease;
+      }
+
+      .card:hover .teaser,
+      .card:focus-within .teaser {
+        opacity: 1;
+      }
+
+      .bio {
+        max-width: 74ch;
+        font-size: 1.02rem;
+      }
+
+      .bio p {
+        margin-top: 0;
+        margin-bottom: 0.95rem;
+      }
+
+      .contact-box {
+        border: 2px solid var(--line);
+        padding: 1.2rem;
+        display: grid;
+        gap: 0.35rem;
+        max-width: 700px;
+        background: rgba(214, 38, 45, 0.06);
+      }
+
+      .contact-box p {
+        margin: 0;
+      }
+
+      .email {
+        font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        width: fit-content;
+      }
+
+      .contact-form {
+        margin-top: 1rem;
+        display: grid;
+        gap: 0.8rem;
+        max-width: 700px;
+      }
+
+      .contact-form label {
+        display: grid;
+        gap: 0.35rem;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.7rem 0.85rem;
+        border: 1.5px solid var(--line);
+        background: rgba(239, 232, 226, 0.7);
+        font: inherit;
+      }
+
+      .contact-form textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .form-submit {
+        justify-self: start;
+        padding: 0.62rem 1.1rem;
+        border: 2px solid var(--line);
+        background: var(--signal);
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .form-submit:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0 rgba(16, 18, 23, 0.25);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 620ms ease, transform 620ms cubic-bezier(0.2, 0.72, 0.12, 1);
+      }
+
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      .footer {
+        padding: 2rem 0 3rem;
+        font-size: 0.84rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .portrait {
+          justify-self: start;
+          width: min(88vw, 320px);
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: min(var(--max), calc(100vw - 1.2rem));
+        }
+
+        .nav-wrap {
+          align-items: center;
+          flex-direction: row;
+          padding: 0.45rem 0;
+        }
+
+        .menu {
+          position: fixed;
+          top: 0;
+          right: 0;
+          height: 100vh;
+          width: min(78vw, 320px);
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.15rem;
+          padding: 5rem 1.5rem 2rem;
+          background: var(--paper);
+          border-left: 1px solid rgba(26, 26, 26, 0.2);
+          transform: translateX(100%);
+          transition: transform 220ms ease;
+          z-index: 5;
+        }
+
+        .menu a {
+          font-size: 1.05rem;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+        }
+
+        body.menu-open {
+          overflow: hidden;
+        }
+
+        body.menu-open .menu {
+          transform: translateX(0);
+        }
+
+        body.menu-open .menu-scrim {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="site">
+      <header class="nav">
+        <div class="container nav-wrap">
+          <div class="brand">Alex Gendler</div>
+          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" type="button">
+            <span aria-hidden="true"></span>
+            Menu
+          </button>
+          <nav class="menu" id="primary-menu" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#writing">Writing</a>
+            <a href="#multimedia">Multimedia</a>
+            <a href="#education">Education</a>
+            <a href="#panels">Panels</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <div class="menu-scrim" aria-hidden="true"></div>
+
+      <main>
+        <section class="hero">
+          <div class="container hero-grid reveal">
+            <aside class="portrait" aria-label="Portrait of Alex Gendler">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/6173be39258ec8031d3ab5a7/19714c75-82fa-416a-a440-75e849b2e8b3/headshot.jpg?format=1500w"
+                alt="Alex Gendler portrait"
+                loading="eager"
+                decoding="async"
+              />
+              <span class="caption">Alex Gendler</span>
+            </aside>
+            <div>
+              <div id="about">
+                <div class="section-head">
+                  <h2>About</h2>
+                </div>
+                <div class="bio">
+                  <p>
+                    I am a Ukrainian-born and Brooklyn-based writer, editor, content developer, and occasional translator with
+                    over a decade of experience in print, video, and digital media. I've worked as a journalist for
+                    <a href="https://www.voanews.com/author/alex-gendler/rykvt" target="_blank" rel="noreferrer noopener">Voice of America</a>,
+                    led the editorial team at microlearning app
+                    <a href="https://uptime.app/" target="_blank" rel="noreferrer noopener">Uptime</a>, and written
+                    <a href="https://ed.ted.com/lessons?q=alex+gendler" target="_blank" rel="noreferrer noopener">TED-Ed animated lessons</a>
+                    on science, history, and everything else under the sun.
+                  </p>
+                  <p>
+                    On my own time, I've published long-form opinion and analysis on subjects like the history of masculinity,
+                    the ideology of the tech industry, and political extremism in music scenes, with articles in
+                    <a href="https://americanaffairsjournal.org/2020/11/the-new-superfluous-men/" target="_blank" rel="noreferrer noopener">American Affairs</a>,
+                    <a href="https://thepointmag.com/politics/homo-algorithmicus/" target="_blank" rel="noreferrer noopener">The Point</a>,
+                    and <a href="https://thebattleground.eu/2023/06/03/aryan-aztlan/" target="_blank" rel="noreferrer noopener">The Battleground</a>.
+                    Along the way, I've spoken at academic conferences and panels as well as being a
+                    <a href="https://podcasts.apple.com/us/podcast/488-homo-techno-homo-solo-post-homo-ft-alex-gendler/id1229278776?i=1000710102916" target="_blank" rel="noreferrer noopener">guest</a>
+                    and
+                    <a href="https://brazen.fm/podcasts/resistance/episode/bonus-escaping-kherson/" target="_blank" rel="noreferrer noopener">co-producer</a>
+                    on podcasts. As a native Russian speaker, I've also done some translation work, ranging from Russian
+                    and Ukrainian
+                    <a href="https://alexgendler.substack.com/p/poetry-corner-taras-shevchenkos-dont" target="_blank" rel="noreferrer noopener">poetry</a>
+                    to
+                    <a href="https://www.pbs.org/newshour/show/pro-russian-separatists-launch-attacks-election-offices" target="_blank" rel="noreferrer noopener">interviews</a>
+                    with armed separatists in the Donbas.
+                  </p>
+                  <p>
+                    While my career has taken many twists and turns, the common thread has always been finding ways to turn
+                    complex information into compelling narratives. I'm currently available for new projects and collaborations,
+                    so don't hesitate to <a href="#contact">reach out</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="writing" class="reveal">
+          <div class="container">
+            <div class="section-head">
+              <h2>Selected Writing</h2>
+              <p>Long-form essays and criticism</p>
+            </div>
+            <div class="cards">
+              <article class="card has-thumb">
+                <div class="card-body">
+                  <h3><a href="https://thepointmag.com/politics/soft-power-in-hard-times/" target="_blank" rel="noreferrer noopener">Soft Power in Hard Times</a></h3>
+                  <p>The Point, 2026</p>
+                </div>
+                <div class="card-thumb-wrap">
+                  <img class="card-thumb" style="object-fit: cover; object-position: left center !important;" src="softpower-left-4x5-exact.jpg?v=4" alt="Soft Power in Hard Times" loading="lazy" decoding="async" />
+                </div>
+              </article>
+              <article class="card has-thumb">
+                <div class="card-body">
+                  <h3><a href="https://thepointmag.com/politics/homo-algorithmicus/" target="_blank" rel="noreferrer noopener">Homo Algorithmicus: Rationalism and its discontents</a></h3>
+                  <p>The Point, 2025</p>
+                </div>
+                <div class="card-thumb-wrap">
+                  <img class="card-thumb" src="algorithm-elon-leftedge-4x5.jpg?v=1" alt="Homo Algorithmicus: Rationalism and its discontents" loading="lazy" decoding="async" />
+                </div>
+              </article>
+              <article class="card has-thumb">
+                <div class="card-body">
+                  <h3><a href="https://www.voanews.com/a/dark-comedy-exposes-absurd-reality-of-kazakh-state-media-/7689539.html" target="_blank" rel="noreferrer noopener">Dark Comedy Exposes Absurd Reality of Kazakh State Media</a></h3>
+                  <p>Voice of America, 2024</p>
+                </div>
+                <div class="card-thumb-wrap">
+                  <img class="card-thumb crop-top" src="Dark Comedy.jpg" alt="Dark Comedy Exposes Absurd Reality of Kazakh State Media" loading="lazy" decoding="async" />
+                </div>
+              </article>
+              <article class="card has-thumb">
+                <div class="card-body">
+                  <h3><a href="https://archive.is/BXHgd" target="_blank" rel="noreferrer noopener">Assembling the Debris: Russia 1985-1999</a></h3>
+                  <p>Metro Magazine, 2023</p>
+                </div>
+                <div class="card-thumb-wrap">
+                  <img class="card-thumb" style="object-position: 68% center;" src="debris.jpg?v=1" alt="Assembling the Debris: Russia 1985-1999" loading="lazy" decoding="async" />
+                </div>
+              </article>
+              <article class="card has-thumb">
+                <div class="card-body">
+                  <h3><a href="https://thebattleground.eu/2023/06/03/aryan-aztlan/" target="_blank" rel="noreferrer noopener">The Bizarre World of Aztec Nazi Black Metal</a></h3>
+                  <p>The Battleground, 2023</p>
+                </div>
+                <div class="card-thumb-wrap">
+                  <img class="card-thumb" src="aztlan-center-4x5.png?v=1" alt="The Bizarre World of Aztec Nazi Black Metal" loading="lazy" decoding="async" />
+                </div>
+              </article>
+              <article class="card has-thumb">
+                <div class="card-body">
+                  <h3><a href="https://americanaffairsjournal.org" target="_blank" rel="noreferrer noopener">The New Superfluous Men</a></h3>
+                  <p>American Affairs, 2020</p>
+                </div>
+                <div class="card-thumb-wrap">
+                  <img class="card-thumb" style="object-position: 40% center;" src="men.jpg?v=1" alt="The New Superfluous Men" loading="lazy" decoding="async" />
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="multimedia" class="reveal">
+          <div class="container">
+            <div class="section-head">
+              <h2>Multimedia</h2>
+              <p>Audio + documentary production</p>
+            </div>
+            <div class="cards">
+              <article class="card">
+                <h3><a href="https://brazen.fm" target="_blank" rel="noreferrer noopener">Resistance Podcast: Escape from Kherson</a></h3>
+                <p>Brazen Presents, 2022 (co-producer &amp; translator)</p>
+              </article>
+              <article class="card">
+                <h3><a href="https://www.voanews.com" target="_blank" rel="noreferrer noopener">Afghanistan Full Circle</a></h3>
+                <p>Voice of America, 2022 (script)</p>
+              </article>
+              <article class="card">
+                <h3><a href="https://visualjournali.st" target="_blank" rel="noreferrer noopener">Two Years of War in Ukraine</a></h3>
+                <p>Voice of America, 2024 (text)</p>
+              </article>
+              <article class="card">
+                <h3><a href="https://www.voanews.com" target="_blank" rel="noreferrer noopener">Wagner Group Leaves Trail of Destruction</a></h3>
+                <p>Voice of America, 2023 (script)</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="reveal">
+          <div class="container">
+            <div class="section-head">
+              <h2>Educational Work</h2>
+              <p>Explainers for global audiences</p>
+            </div>
+            <div class="cards">
+              <article class="card">
+                <h3><a href="https://www.youtube.com" target="_blank" rel="noreferrer noopener">Demolition, Disease, and Death: Building the Panama Canal</a></h3>
+                <p>TED-Ed, 2021</p>
+              </article>
+              <article class="card">
+                <h3><a href="https://www.openculture.com" target="_blank" rel="noreferrer noopener">A Brief History of Chess</a></h3>
+                <p>TED-Ed, 2019</p>
+              </article>
+              <article class="card">
+                <h3><a href="https://www.youtube.com" target="_blank" rel="noreferrer noopener">How to Recognize a Dystopia</a></h3>
+                <p>TED-Ed, 2016</p>
+              </article>
+              <article class="card">
+                <h3><a href="https://www.theguardian.com" target="_blank" rel="noreferrer noopener">The Wars that Inspired Game of Thrones</a></h3>
+                <p>TED-Ed, 2015</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="panels" class="reveal">
+          <div class="container">
+            <div class="section-head">
+              <h2>Interviews &amp; Panels</h2>
+              <p>Public conversation</p>
+            </div>
+            <div class="cards">
+              <article class="card">
+                <h3><a href="https://parallaxviews.podbean.com" target="_blank" rel="noreferrer noopener">The Boys Are Not Alright</a></h3>
+                <p>Parallax Views podcast, 2025</p>
+              </article>
+              <article class="card">
+                <h3><a href="https://www.youtube.com" target="_blank" rel="noreferrer noopener">Making Sense of the War in Ukraine</a></h3>
+                <p>Convergence Magazine, 2022</p>
+              </article>
+              <article class="card">
+                <h3><a href="https://www.brandeis.edu" target="_blank" rel="noreferrer noopener">Aryan AztlÃ¡n</a></h3>
+                <p>Brandeis University, 2022</p>
+              </article>
+              <article class="card">
+                <h3><a href="https://grimposium.ca" target="_blank" rel="noreferrer noopener">Anti-Modernity and the Conspiracy of History</a></h3>
+                <p>International Society for Metal Music Studies, 2023</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="reveal">
+          <div class="container">
+            <div class="section-head">
+              <h2>Contact</h2>
+              <p>Available for collaborations</p>
+            </div>
+            <div class="bio">
+              <p>
+                You can follow my writing on
+                <a href="https://alexgendler.substack.com/" target="_blank" rel="noreferrer noopener">Substack</a>, connect with
+                me on
+                <a href="https://www.linkedin.com/in/alex-gendler-98b997a8/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+                for professional opportunities, or use the form below.
+              </p>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xojnreny" method="POST">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" required></textarea>
+              </label>
+              <button class="form-submit" type="submit">Send</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div>Â© 2026 Alex Gendler</div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menuScrim = document.querySelector(".menu-scrim");
+      const menu = document.querySelector(".menu");
+
+      if (menuToggle && menuScrim && menu) {
+        const closeMenu = () => {
+          document.body.classList.remove("menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        };
+
+        const openMenu = () => {
+          document.body.classList.add("menu-open");
+          menuToggle.setAttribute("aria-expanded", "true");
+        };
+
+        menuToggle.addEventListener("click", () => {
+          if (document.body.classList.contains("menu-open")) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        menuScrim.addEventListener("click", closeMenu);
+        menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeMenu();
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              observer.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.16 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      const teasers = {
+        "Assembling the Debris: Russia 1985-1999":
+          "In a cinematic dispatch from the ruins of the USSR, TraumaZone becomes a portrait of collapse, memory, and mythmaking.",
+        "The New Superfluous Men":
+          "Incel culture emerges not as an internet sideshow but as a warning flare for economic precarity and social abandonment.",
+        "The Bizarre World of Aztec Nazi Black Metal":
+          "A dark tour through Aztec Nazi black metal reveals how extremist politics hijack identity, symbolism, and spectacle.",
+        "Homo Algorithmicus: Rationalism and its discontents":
+          "Techno-rational certainty collides with the messy facts of violence, desire, and moral conflict.",
+        "Soft Power in Hard Times":
+          "As hard power falters, a global contest unfolds to shape narratives, legitimacy, and cultural influence.",
+        "Dark Comedy Exposes Absurd Reality of Kazakh State Media":
+          "A sly, urgent report on Kazakh satire shows how comedy can puncture official fiction faster than any press release.",
+        "Resistance Podcast: Escape from Kherson":
+          "A tense audio chronicle follows one family's escape from occupied Kherson and the split-second choices that made survival possible.",
+        "Afghanistan Full Circle":
+          "Across a century, reform, backlash, and foreign intervention keep Afghanistan trapped in a brutal loop.",
+        "Two Years of War in Ukraine":
+          "Across maps, timelines, and eyewitness context, Ukraine's war hardens while its stakes keep widening.",
+        "Wagner Group Leaves Trail of Destruction":
+          "Wagner's path of violence and extraction reveals the geopolitical footprint of a deniable private army.",
+        "Demolition, Disease, and Death: Building the Panama Canal":
+          "A vivid history of the Panama Canal reveals the deadly human cost behind one of modern engineering's grandest triumphs.",
+        "A Brief History of Chess":
+          "From royal courts to online blitz, chess becomes a global language of strategy and status.",
+        "How to Recognize a Dystopia":
+          "Dystopia warns less about gadgets than about power marketed as perfection.",
+        "The Wars that Inspired Game of Thrones":
+          "Beneath the fantasy veneer, the Wars of the Roses shape Game of Thrones' blood-soaked politics.",
+        "The Boys Are Not Alright":
+          "Working-class male despair is traced to economic fracture, isolation, and a collapsing social contract.",
+        "Making Sense of the War in Ukraine":
+          "Beyond slogans, Ukraine's war is examined with historical depth, political clarity, and moral urgency.",
+        "Aryan AztlÃ¡n":
+          "In a fringe metal scene, pagan revivalism and conspiracy politics fuse into a volatile cultural project.",
+        "Anti-Modernity and the Conspiracy of History":
+          "An incisive essay maps how anti-modern subcultures turn grievance into totalizing conspiracy and mythic nostalgia."
+      };
+
+      document.querySelectorAll(".card").forEach((card) => {
+        const title = card.querySelector("h3 a")?.textContent.trim();
+        const teaser = teasers[title];
+        if (!teaser) return;
+        const p = document.createElement("p");
+        p.className = "teaser";
+        p.textContent = teaser;
+        const body = card.querySelector(".card-body");
+        (body ?? card).appendChild(p);
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
