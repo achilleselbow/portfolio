@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alex Gendler Site Variants</title>
+    <style>
+      :root {
+        --bg: #f3f1eb;
+        --ink: #111318;
+        --line: #1d2028;
+        --accent: #cc1f2f;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      main {
+        width: min(900px, calc(100vw - 2rem));
+        margin: 3rem auto;
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+      }
+      p { margin: 0 0 1.25rem; }
+      .grid {
+        display: grid;
+        gap: 0.75rem;
+      }
+      a {
+        display: block;
+        padding: 0.9rem 1rem;
+        border: 2px solid var(--line);
+        color: inherit;
+        text-decoration: none;
+        background: #fff;
+        transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+      }
+      a:hover,
+      a:focus-visible {
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0 0 var(--line);
+        border-color: var(--accent);
+      }
+      small { color: #404553; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Alex Gendler Site Variants</h1>
+      <p>Choose a version to review.</p>
+      <div class="grid">
+        <a href="Alex%20Gendler-original.html">
+          Original Editorial Version<br /><small>Constructivist / suprematist nods</small>
+        </a>
+        <a href="Alex%20Gendler%20-%20Ukrainian%20Neoclassical%20Heritage.html">
+          Ukrainian Neoclassical Heritage<br /><small>Stately classical + sacred-gold editorial language</small>
+        </a>
+        <a href="Alex%20Gendler%20-%20Fitzcarraldo%20Edition.html">
+          Fitzcarraldo-Inspired Version<br /><small>Typographic minimalism</small>
+        </a>
+        <a href="Alex%20Gendler%20-%20Verso%20Homage.html">
+          Verso Homage Version<br /><small>Digital-age radical editorial aesthetic</small>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
